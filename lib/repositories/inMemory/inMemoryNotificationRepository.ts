@@ -37,6 +37,13 @@ export class InMemoryNotificationRepository
     }
   };
 
+  genMarkAsResolvedX = async (uid: string): Promise<void> => {
+    const notification = notificationsMap.get(uid);
+    if (notification) {
+      notification.isResolved = true;
+    }
+  };
+
   genFetchAllRawForViewerX = async (
     userUid: string,
     genFetchAllRawForViewerX: number | null
