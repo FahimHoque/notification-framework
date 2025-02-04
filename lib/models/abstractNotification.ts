@@ -4,6 +4,7 @@ export interface INotification<T = string> {
   ownerUid: string;
   senderUid: string;
   isRead: boolean;
+  isResolved: boolean;
   createdAt: number;
   payload: Record<string, any>;
 }
@@ -16,6 +17,7 @@ export abstract class AbstractNotification<T = string>
   public readonly ownerUid: string;
   public readonly senderUid: string;
   public readonly isRead: boolean;
+  public readonly isResolved: boolean;
   public readonly createdAt: number;
   public readonly payload: Record<string, any>;
 

@@ -52,6 +52,10 @@ export class MongoNotificationRepository
     await this.collection.updateOne({ uid }, { $set: { isRead: true } });
   };
 
+  genMarkAsResolvedX = async (uid: string): Promise<void> => {
+    await this.collection.updateOne({ uid }, { $set: { isResolved: true } });
+  };
+  
   genFetchAllRawForViewerX = async (
     viewerUid: string,
     lastFetchTimeInMs: number | null
